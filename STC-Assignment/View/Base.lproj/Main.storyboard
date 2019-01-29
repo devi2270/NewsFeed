@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e67-Qf-54A">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="STC_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aqx-w2-Ewp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="250" id="OZI-iK-m5N" customClass="ArticleCell" customModule="STC_Assignment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OZI-iK-m5N" id="LUt-3G-qLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama Offers Hopeful Vision While Noting Nation's Fears" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-bq-zce" userLabel="title">
+                                                    <rect key="frame" x="8" y="8" width="359" height="63.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                                    <color key="textColor" red="0.066706240180000001" green="0.33116331700000001" blue="0.63251507279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bAS-IJ-Nxl" userLabel="content">
+                                                    <rect key="frame" x="8" y="79.5" width="217" height="162"/>
+                                                    <string key="text">In his last State of the Union address, President Obama sought to paint a hopeful portrait. But he acknowledged that many Americans felt shut out of a political and economic system they view as rigged.</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-ZF-IpG">
+                                                    <rect key="frame" x="233" y="79.5" width="134" height="162"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="vmu-ZF-IpG" secondAttribute="height" multiplier="67:81" id="RzX-0I-OFI"/>
+                                                        <constraint firstAttribute="width" constant="134" id="tK7-J8-yQW"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="bAS-IJ-Nxl" secondAttribute="bottom" constant="8" id="1e8-0k-iYf"/>
+                                                <constraint firstItem="bAS-IJ-Nxl" firstAttribute="top" secondItem="v2z-bq-zce" secondAttribute="bottom" constant="8" id="CWS-nA-Ylp"/>
+                                                <constraint firstItem="vmu-ZF-IpG" firstAttribute="leading" secondItem="bAS-IJ-Nxl" secondAttribute="trailing" constant="8" id="EON-5q-PI2"/>
+                                                <constraint firstItem="vmu-ZF-IpG" firstAttribute="top" secondItem="v2z-bq-zce" secondAttribute="bottom" constant="8" id="ICh-Ov-7B6"/>
+                                                <constraint firstItem="v2z-bq-zce" firstAttribute="leading" secondItem="LUt-3G-qLr" secondAttribute="leading" constant="8" id="Rry-01-pTP"/>
+                                                <constraint firstItem="bAS-IJ-Nxl" firstAttribute="top" secondItem="v2z-bq-zce" secondAttribute="bottom" constant="8" id="UMN-RH-EaI"/>
+                                                <constraint firstItem="bAS-IJ-Nxl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LUt-3G-qLr" secondAttribute="leading" constant="8" id="VVw-AY-sLJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="bAS-IJ-Nxl" secondAttribute="trailing" constant="150" id="YdV-g0-aul"/>
+                                                <constraint firstAttribute="trailing" secondItem="v2z-bq-zce" secondAttribute="trailing" constant="8" id="d2n-Ho-yQL"/>
+                                                <constraint firstAttribute="trailing" secondItem="vmu-ZF-IpG" secondAttribute="trailing" constant="8" id="eFA-If-zQp"/>
+                                                <constraint firstAttribute="bottom" secondItem="vmu-ZF-IpG" secondAttribute="bottom" constant="8" id="kdD-Ud-dGH"/>
+                                                <constraint firstItem="v2z-bq-zce" firstAttribute="top" secondItem="LUt-3G-qLr" secondAttribute="top" constant="8" id="s8Q-5B-7EA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="articleImageView" destination="vmu-ZF-IpG" id="5q9-YY-fT0"/>
+                                            <outlet property="contentLabel" destination="bAS-IJ-Nxl" id="9m3-WN-o0F"/>
+                                            <outlet property="titleLabel" destination="v2z-bq-zce" id="Jto-eN-rOE"/>
+                                            <segue destination="3m4-KV-cmt" kind="show" identifier="detailSegue" id="97M-fl-1U3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sDZ-UY-xCG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wdu-0j-HOo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aqx-w2-Ewp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6xK-NF-ZcI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aqx-w2-Ewp" secondAttribute="bottom" id="Zda-tz-gge"/>
+                            <constraint firstItem="aqx-w2-Ewp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e6x-GW-pfE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aqx-w2-Ewp" secondAttribute="trailing" id="tcW-sg-tId"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SpE-hB-MOa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="F35-pl-dYX">
+                            <connections>
+                                <action selector="refreshTapped:" destination="BYZ-38-t0r" id="rM1-LB-ZhA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="aqx-w2-Ewp" id="OWB-rK-6Nw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920.79999999999995" y="27.436281859070466"/>
+        </scene>
+        <!--Article Details Controller-->
+        <scene sceneID="Dql-4W-bVH">
+            <objects>
+                <viewController id="3m4-KV-cmt" customClass="ArticleDetailsController" customModule="STC_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kQ6-s5-u2H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="article-placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-Cl-AJA">
+                                <rect key="frame" x="0.0" y="130" width="375" height="167"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama Offers Hopeful Vision While Noting Nation's Fears" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khv-lX-t5H">
+                                <rect key="frame" x="8" y="305" width="359" height="55"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" red="0.066706240180000001" green="0.33116331700000001" blue="0.63251507279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="awv-Y0-UH7">
+                                <rect key="frame" x="8" y="368" width="359" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="i9t-Xk-1b1"/>
+                                </constraints>
+                                <string key="text">In his last State of the Union address, President Obama sought to paint a hopeful portrait. But he acknowledged that many Americans felt shut out of a political and economic system they view as rigged.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="awv-Y0-UH7" firstAttribute="leading" secondItem="bfc-f8-LWr" secondAttribute="leading" constant="8" id="7Bl-yD-Rdk"/>
+                            <constraint firstItem="a3G-Cl-AJA" firstAttribute="height" secondItem="kQ6-s5-u2H" secondAttribute="height" multiplier="0.25" id="7rT-K5-YjB"/>
+                            <constraint firstItem="Khv-lX-t5H" firstAttribute="leading" secondItem="bfc-f8-LWr" secondAttribute="leading" constant="8" id="C7t-U0-1bM"/>
+                            <constraint firstItem="Khv-lX-t5H" firstAttribute="top" secondItem="a3G-Cl-AJA" secondAttribute="bottom" constant="8" id="SaL-NP-Kg1"/>
+                            <constraint firstItem="awv-Y0-UH7" firstAttribute="trailing" secondItem="bfc-f8-LWr" secondAttribute="trailing" constant="-8" id="Vhy-EM-V8E"/>
+                            <constraint firstItem="bfc-f8-LWr" firstAttribute="trailing" secondItem="Khv-lX-t5H" secondAttribute="trailing" constant="8" id="YvL-OU-yLx"/>
+                            <constraint firstItem="a3G-Cl-AJA" firstAttribute="trailing" secondItem="bfc-f8-LWr" secondAttribute="trailing" id="bKZ-oA-qfb"/>
+                            <constraint firstItem="a3G-Cl-AJA" firstAttribute="top" secondItem="bfc-f8-LWr" secondAttribute="top" constant="66" id="hrD-WD-2y0"/>
+                            <constraint firstItem="awv-Y0-UH7" firstAttribute="top" secondItem="Khv-lX-t5H" secondAttribute="bottom" constant="8" id="lBe-6y-ckc"/>
+                            <constraint firstItem="a3G-Cl-AJA" firstAttribute="leading" secondItem="bfc-f8-LWr" secondAttribute="leading" id="tPU-qU-icA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfc-f8-LWr"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="awv-Y0-UH7" id="UoK-6d-MCI"/>
+                        <outlet property="imageView" destination="a3G-Cl-AJA" id="gG1-2f-nhb"/>
+                        <outlet property="titleLabel" destination="Khv-lX-t5H" id="tIZ-H2-eRg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6KC-a7-e9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="27.436281859070466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zKV-jd-UPG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e67-Qf-54A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sK4-od-Z62">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mwt-Hj-0MV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bf-3g-snG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18.399999999999999" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="article-placeholder.png" width="388" height="178"/>
+    </resources>
+</document>
