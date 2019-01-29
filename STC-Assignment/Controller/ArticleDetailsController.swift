@@ -26,7 +26,7 @@ class ArticleDetailsController: UIViewController {
         
         self.titleLabel.text = selectedArticle?.title
         self.contentLabel.text = selectedArticle?.content
-        if let urlString = selectedArticle?.imageURL {
+        if let urlString = selectedArticle?.image_url {
             if let url = URL(string: urlString) {
                 if let imageData = NSData(contentsOf: url) as Data? {
                     self.imageView.image = UIImage(data: imageData)

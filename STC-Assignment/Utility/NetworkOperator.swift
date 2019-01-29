@@ -14,7 +14,7 @@ struct NetworkOperator {
     lazy var session: URLSession = URLSession(configuration:self.configuration)
     var URL: URL
     
-    typealias CompletionType = ([String: AnyObject]?) -> Void
+    typealias CompletionType = (Data?) -> Void
     
     init(url: URL) {
         self.URL = url
@@ -30,13 +30,7 @@ struct NetworkOperator {
         let request = URLRequest(url: self.URL)
         
         let task = session.dataTask(with: request, completionHandler: {(data, response, error) in
-            do{
-                let jsonDict = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:AnyObject]
-                completion(jsonDict)
-            }
-            catch {
-                print("json error: \(error)")
-            }
+                completion(data)
         });
         task.resume()
     }

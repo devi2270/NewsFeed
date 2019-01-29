@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let session = URLSession.shared
             var task = URLSessionDownloadTask()
             
-            let articleUrl = article.imageURL
+            let articleUrl = article.image_url
             if let articleUrl = articleUrl {
                 let url = URL.init(string: articleUrl)
                 //let url = URL(string: articleUrl)

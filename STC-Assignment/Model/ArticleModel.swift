@@ -8,12 +8,26 @@
 
 import Foundation
 
-struct ArticleModel {
+struct DataModel: Codable {
+    
+    var title: String?
+    var articles: [ArticleModel]?
+}
+
+struct ArticleModel: Codable {
     
     var title: String?
     var website: String?
     var authors: String?
     var date: String?
     var content: String?
-    var imageURL: String?
+    var tag: Tag?
+    var image_url: String?
 }
+
+struct Tag: Codable {
+    
+    var id: Int?
+    var label: String?
+}
+

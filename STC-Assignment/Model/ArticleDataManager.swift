@@ -16,8 +16,8 @@ struct ArticleDataManager {
         
         if let articleURL = articleURL {
             var networkOperator = NetworkOperator(url: articleURL)
-            networkOperator.downloadDataFromURL { (jsonDict) in
-                let (title,articles) = self.parseArticleDetails(jsonDictionary: jsonDict)
+            networkOperator.downloadDataFromURL { (jsonData) in
+                let (title,articles) = self.parseArticleDetails(jsonData: jsonData)
                 if let title = title {
                     if let articles = articles {
                         completion(title,articles)
@@ -27,24 +27,28 @@ struct ArticleDataManager {
         }
     }
     
-    static private func parseArticleDetails(jsonDictionary: [String: AnyObject]?) -> (String?, [ArticleModel]?)  {
+    static private func parseArticleDetails(jsonData: Data?) -> (String?, [ArticleModel]?)  {
         
-        var articles = [ArticleModel]()
-        guard let  articlesArray = jsonDictionary?["articles"],
-                let title = jsonDictionary?["title"] as? String
-            else {
-                print("No data returned from server!")
-                return (nil, nil)
-        }
+        let jsonDataDecoder = JSONDecoder()
         
-        for var item in (articlesArray as? [[String: AnyObject]])! {
-            var model = ArticleModel()
-            model.title = item["title"] as? String
-            model.content = item["content"] as? String
-            model.imageURL = item["image_url"] as? String
-            articles.append(model)
+        do {
+            if let jsonData = jsonData {
+                let jsonData = try jsonDataDecoder.decode(DataModel.self, from: jsonData)
+                if let title = jsonData.title {
+                    if let articles = jsonData.articles {
+                        let sortedArticles = articles.sorted(by: { (article1, article2) -> Bool in
+                            let title1 = article1.title ?? ""
+                            let title2 = article2.title ?? ""
+                            return (title1.localizedCaseInsensitiveCompare(title2) == .orderedDescending)
+                        })
+                        return (title, sortedArticles)
+                    }
+                }
+            }
+        } catch {
+            print("Failed to decode JSON Data: \(error.localizedDescription)")
         }
-    
-        return (title,articles)
+        return (nil, nil)
     }
-}
+}   
+
