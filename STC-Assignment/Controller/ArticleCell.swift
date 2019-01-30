@@ -6,6 +6,10 @@
 //  Copyright © 2019 Self LearningSelf. All rights reserved.
 //
 
+/*
+    Custom cell class for displaying the articles.
+*/
+
 import UIKit
 
 class ArticleCell: UITableViewCell {
@@ -17,8 +21,19 @@ class ArticleCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //self.titleLabel.semanticContentAttribute = .forceRightToLeft
-        //self.contentLabel.semanticContentAttribute = .forceLeftToRight
+        /*
+            Support Right To Left. Setting text alignment  based on Layout Direction
+        */
+        let attribute = self.semanticContentAttribute
+        let layoutDirection = UIView.userInterfaceLayoutDirection(for: attribute)
+        if layoutDirection == .rightToLeft {
+            self.titleLabel.textAlignment = .right
+            self.contentLabel.textAlignment = .right
+        }
+        else{
+            self.titleLabel.textAlignment = .left
+            self.contentLabel.textAlignment = .left
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

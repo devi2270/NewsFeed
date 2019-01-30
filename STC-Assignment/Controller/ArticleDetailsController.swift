@@ -21,8 +21,21 @@ class ArticleDetailsController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        //self.titleLabel.semanticContentAttribute = .forceRightToLeft
-        //self.contentLabel.semanticContentAttribute = .forceRightToLeft
+        /*
+            Support Right To Left. Setting view appearnce and text alignment  based on Layout Direction
+        */
+        let attribute = self.view.semanticContentAttribute
+        let layoutDirection = UIView.userInterfaceLayoutDirection(for: attribute)
+        if layoutDirection == .rightToLeft {
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            self.titleLabel.textAlignment = .right
+            self.contentLabel.textAlignment = .right
+        }
+        else{
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            self.titleLabel.textAlignment = .left
+            self.contentLabel.textAlignment = .left
+        }
         
         self.titleLabel.text = selectedArticle?.title
         self.contentLabel.text = selectedArticle?.content

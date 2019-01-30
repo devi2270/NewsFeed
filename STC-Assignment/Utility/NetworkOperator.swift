@@ -6,6 +6,10 @@
 //  Copyright © 2019 Self LearningSelf. All rights reserved.
 //
 
+/*
+    Utility struct for downloading data from a given URL.
+*/
+
 import Foundation
 
 struct NetworkOperator {
@@ -21,10 +25,8 @@ struct NetworkOperator {
     }
     
     /*
-     Downloads json from the URL;
-     convert it to NSData and
-     returns the dictionary
-     */
+        Downloads the data and sends back to the calling function.
+    */
     mutating func downloadDataFromURL(completion: @escaping CompletionType) {
         
         let request = URLRequest(url: self.URL)

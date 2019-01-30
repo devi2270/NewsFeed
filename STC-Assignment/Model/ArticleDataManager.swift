@@ -6,14 +6,20 @@
 //  Copyright © 2019 Self LearningSelf. All rights reserved.
 //
 
+/*
+    Data Manager struct responsible for sending the articles requested by View Controller and parsing the downloaded data returned by the Network Operator.
+*/
+
 import Foundation
 
 struct ArticleDataManager {
     
     static private let articleURL = URL(string: "https://no89n3nc7b.execute-api.ap-southeast-1.amazonaws.com/staging/exercise")
     
+    /*
+        Fetches title and articles and sends back to the calling View Controller.
+    */
     static func fetchArticleDetails (completion: @escaping (String,[ArticleModel]) -> Void) {
-        
         if let articleURL = articleURL {
             var networkOperator = NetworkOperator(url: articleURL)
             networkOperator.downloadDataFromURL { (jsonData) in
@@ -27,6 +33,9 @@ struct ArticleDataManager {
         }
     }
     
+    /*
+        Parses the json data as DataModel and sends back title and list of sorted articles.
+    */
     static private func parseArticleDetails(jsonData: Data?) -> (String?, [ArticleModel]?)  {
         
         let jsonDataDecoder = JSONDecoder()
@@ -36,6 +45,9 @@ struct ArticleDataManager {
                 let jsonData = try jsonDataDecoder.decode(DataModel.self, from: jsonData)
                 if let title = jsonData.title {
                     if let articles = jsonData.articles {
+                        /*
+                            Sorts the articles array based on the article title.
+                        */
                         let sortedArticles = articles.sorted(by: { (article1, article2) -> Bool in
                             let title1 = article1.title ?? ""
                             let title2 = article2.title ?? ""

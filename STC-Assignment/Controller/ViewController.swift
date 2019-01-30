@@ -19,8 +19,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        /*
+            Support Right To Left. Setting view appearnce  based on Layout Direction
+        */
+        let attribute = self.view.semanticContentAttribute
+        let layoutDirection = UIView.userInterfaceLayoutDirection(for: attribute)
+        if layoutDirection == .rightToLeft {
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        }
+        else{
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        }
+        
+        
         self.cache = NSCache()
         
+        /*
+            Calls the fetch API of the DataManager and updates the UI on the main thread.
+        */
         ArticleDataManager.fetchArticleDetails { (title,articlesArray) in
             self.articles = articlesArray
             DispatchQueue.main.async {
@@ -43,11 +59,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell?.titleLabel.text = article.title
         cell?.contentLabel.text = article.content
         
+        /*
+            Setting a placeholder image for all the image cells.
+        */
         cell?.articleImageView?.image = UIImage(named: "article-placeholder.png")
         
+        /*
+            Loading the already cached image if exists.
+        */
         if (self.cache.object(forKey: (indexPath as NSIndexPath).row as AnyObject) != nil){
             cell?.articleImageView?.image = self.cache.object(forKey: (indexPath as NSIndexPath).row as AnyObject) as? UIImage
-        }else{
+        }
+        
+        /*
+            Image not available in cache, downloads the images only for visible cells.
+        */
+        else{
             let session = URLSession.shared
             var task = URLSessionDownloadTask()
             
@@ -58,6 +85,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let url = url {
                     task = session.downloadTask(with: url, completionHandler: { (data, response, error) -> Void in
                         if let data = try? Data(contentsOf: url){
+                            /*
+                                Updates the cell images in the main thread.
+                            */
                             DispatchQueue.main.async(execute: { () -> Void in
                                 if let updateCell = tableView.cellForRow(at: indexPath) as? ArticleCell {
                                     let img:UIImage! = UIImage(data: data)
@@ -75,6 +105,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell!
     }
     
+    /*
+        Sending the selected article to the details screen.
+    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailSegue") {
             
@@ -86,6 +119,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+    /*
+        Action function for the refresh button. Refreshes the data when tapped.
+    */
     @IBAction func refreshTapped(_ sender: Any) {
         ArticleDataManager.fetchArticleDetails { (title,articlesArray) in
             self.articles = articlesArray
