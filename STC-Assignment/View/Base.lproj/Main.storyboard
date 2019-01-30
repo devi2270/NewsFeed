@@ -112,16 +112,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="article-placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-Cl-AJA">
-                                <rect key="frame" x="0.0" y="130" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="167"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama Offers Hopeful Vision While Noting Nation's Fears" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khv-lX-t5H">
-                                <rect key="frame" x="8" y="305" width="359" height="55"/>
+                                <rect key="frame" x="8" y="259" width="359" height="55"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" red="0.066706240180000001" green="0.33116331700000001" blue="0.63251507279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="awv-Y0-UH7">
-                                <rect key="frame" x="8" y="368" width="359" height="120"/>
+                                <rect key="frame" x="8" y="322" width="359" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="i9t-Xk-1b1"/>
                                 </constraints>
@@ -140,7 +140,7 @@
                             <constraint firstItem="awv-Y0-UH7" firstAttribute="trailing" secondItem="bfc-f8-LWr" secondAttribute="trailing" constant="-8" id="Vhy-EM-V8E"/>
                             <constraint firstItem="bfc-f8-LWr" firstAttribute="trailing" secondItem="Khv-lX-t5H" secondAttribute="trailing" constant="8" id="YvL-OU-yLx"/>
                             <constraint firstItem="a3G-Cl-AJA" firstAttribute="trailing" secondItem="bfc-f8-LWr" secondAttribute="trailing" id="bKZ-oA-qfb"/>
-                            <constraint firstItem="a3G-Cl-AJA" firstAttribute="top" secondItem="bfc-f8-LWr" secondAttribute="top" constant="66" id="hrD-WD-2y0"/>
+                            <constraint firstItem="a3G-Cl-AJA" firstAttribute="top" secondItem="bfc-f8-LWr" secondAttribute="top" constant="20" id="hrD-WD-2y0"/>
                             <constraint firstItem="awv-Y0-UH7" firstAttribute="top" secondItem="Khv-lX-t5H" secondAttribute="bottom" constant="8" id="lBe-6y-ckc"/>
                             <constraint firstItem="a3G-Cl-AJA" firstAttribute="leading" secondItem="bfc-f8-LWr" secondAttribute="leading" id="tPU-qU-icA"/>
                         </constraints>

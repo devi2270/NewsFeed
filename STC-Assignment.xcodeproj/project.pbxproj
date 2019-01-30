@@ -19,6 +19,8 @@
 		F1BC9EEA21FEDC9B006BD1A6 /* NetworkOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC9EE921FEDC9B006BD1A6 /* NetworkOperator.swift */; };
 		F1BC9EEC21FEDEDB006BD1A6 /* ArticleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC9EEB21FEDEDB006BD1A6 /* ArticleDataManager.swift */; };
 		F1BC9EEF21FEF6D4006BD1A6 /* article-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F1BC9EEE21FEF6D3006BD1A6 /* article-placeholder.png */; };
+		F1BC9EF92201B110006BD1A6 /* JSONDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC9EF82201B110006BD1A6 /* JSONDataModel.swift */; };
+		F1BC9EFB2201B1F2006BD1A6 /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC9EFA2201B1F2006BD1A6 /* JsonSerializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F1BC9EE921FEDC9B006BD1A6 /* NetworkOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperator.swift; sourceTree = "<group>"; };
 		F1BC9EEB21FEDEDB006BD1A6 /* ArticleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataManager.swift; sourceTree = "<group>"; };
 		F1BC9EEE21FEF6D3006BD1A6 /* article-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "article-placeholder.png"; sourceTree = "<group>"; };
+		F1BC9EF82201B110006BD1A6 /* JSONDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataModel.swift; sourceTree = "<group>"; };
+		F1BC9EFA2201B1F2006BD1A6 /* JsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,10 @@
 		F1BC9EF021FF2682006BD1A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F1BC9EFA2201B1F2006BD1A6 /* JsonSerializer.swift */,
 				F1BC9EEB21FEDEDB006BD1A6 /* ArticleDataManager.swift */,
 				F1BC9EDF21FECD2E006BD1A6 /* ArticleModel.swift */,
+				F1BC9EF82201B110006BD1A6 /* JSONDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,7 +277,9 @@
 			files = (
 				F1BC9EE421FECF92006BD1A6 /* ArticleCell.swift in Sources */,
 				F1BC9ED021FECBE6006BD1A6 /* ViewController.swift in Sources */,
+				F1BC9EFB2201B1F2006BD1A6 /* JsonSerializer.swift in Sources */,
 				F1BC9EEA21FEDC9B006BD1A6 /* NetworkOperator.swift in Sources */,
+				F1BC9EF92201B110006BD1A6 /* JSONDataModel.swift in Sources */,
 				F1BC9ECE21FECBE6006BD1A6 /* AppDelegate.swift in Sources */,
 				F1BC9EE021FECD2E006BD1A6 /* ArticleModel.swift in Sources */,
 				F1BC9EE621FED2A8006BD1A6 /* ArticleDetailsController.swift in Sources */,
